@@ -1,0 +1,53 @@
+@import "tailwindcss";
+.harsh{
+  background: url('https://storage.googleapis.com/stateless-blog-g4m-co-uk/2023/03/Featured-image-Instruments-of-the-Orchestra.jpg') no-repeat center center/cover;
+
+}
+
+
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+    /* Push background behind content */
+}
+
+
+.loop{
+  background: #000;
+  border-radius: 20px;
+}
+
+.animated-bg section {
+  top: calc(50vh - 37.5vmin);
+  left: calc(50vw - 37.5vmin);
+  height: 75vmin;
+  width: 75vmin;
+  position: absolute;
+  mix-blend-mode: exclusion;
+}
+.animated-bg section:nth-child(2) { transform: rotateZ(22.5deg); }
+.animated-bg section:nth-child(3) { transform: rotateZ(45deg); }
+.animated-bg section:nth-child(4) { transform: rotateZ(67.5deg); }
+.animated-bg section:nth-child(5) { transform: rotateZ(90deg); }
+.animated-bg section:nth-child(6) { transform: rotateZ(112.5deg); }
+.animated-bg section:nth-child(7) { transform: rotateZ(135deg); }
+.animated-bg section:nth-child(8) { transform: rotateZ(157.5deg); }
+
+.animated-bg section::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  background-color: #fff;
+  animation: rotation 10s infinite ease-in-out;
+}
+
+@keyframes rotation {
+  0%, 100% { transform: rotateX(0deg) rotateY(0deg); }
+  50% { transform: rotateX(180deg) rotateY(270deg); }
+}
